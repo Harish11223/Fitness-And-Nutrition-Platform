@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Recommendations</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Your Recommendations</h1>
+        <div class="recommendation">
+            <p><strong>Daily Caloric Needs:</strong> <span class="highlight">{{ calories }} kcal</span></p>
+            <p><strong>Macronutrient Distribution:</strong></p>
+            <ul class="macronutrients">
+                <li>Carbs: <span class="highlight">{{ carbs|round(2) }} g</span></li>
+                <li>Protein: <span class="highlight">{{ protein|round(2) }} g</span></li>
+                <li>Fats: <span class="highlight">{{ fats|round(2) }} g</span></li>
+            </ul>
+            <p><strong>Hydration Advice:</strong> Drink approximately <span class="highlight">{{ hydration|round(2) }} liters</span> of water daily.</p>
+            <p><strong>Meal Plan Suggestions:</strong></p>
+            <ul class="meal-plan">
+                <li><strong>Breakfast:</strong> <span class="highlight">{{ meal_plan.Breakfast }}</span></li>
+                <li><strong>Lunch:</strong> <span class="highlight">{{ meal_plan.Lunch }}</span></li>
+                <li><strong>Dinner:</strong> <span class="highlight">{{ meal_plan.Dinner }}</span></li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
