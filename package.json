@@ -1,0 +1,17 @@
+{
+  "name": "fitness-nutrition-platform",
+  "version": "1.0.0",
+  "description": "## Project Overview This project is a fitness and nutrition recommendation platform that allows users to input basic personal details (age, gender, height, weight, etc.), and based on these inputs, it predicts daily caloric needs, macronutrient distribution, and provides exercise recommendations.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "tailwind": "npx tailwindcss -i ./static/css/style.css -o ./static/css/tailwind.css --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap-icons": "^1.11.3",
+    "tailwindcss": "^3.4.14"
+  }
+}

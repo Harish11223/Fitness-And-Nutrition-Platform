@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercise Plans</title>
+
+    <!-- Add some CSS to style the page with animations -->
+    <style>
+      /* Reset default margins and paddings */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      /* Set background image */
+      body {
+        font-family: Arial, sans-serif;
+        background-image: url("your-background-image.jpg"); /* Replace with your image */
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        color: white;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+
+      /* Smooth transitions */
+      a,
+      button {
+        transition: all 0.3s ease;
+      }
+
+      /* Add fade-in animation */
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* Apply animation delays for different sections */
+      .fade-in {
+        animation: fadeIn 1s ease-out;
+        opacity: 0; /* Ensure it's hidden initially */
+        animation-fill-mode: forwards; /* Stay visible after the animation */
+      }
+
+      /* Style the navigation bar */
+      nav {
+        background-color: rgba(0, 0, 0, 0.7);
+        padding: 15px;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        
+      }
+
+      nav ul {
+        display: flex;
+        justify-content: center;
+        list-style-type: none;
+      }
+
+      nav ul li {
+        margin: 0 20px;
+      }
+
+      nav ul li a {
+        color: white;
+        text-decoration: none;
+        font-size: 18px;
+      }
+
+      nav ul li a:hover {
+        color: #ffcc00;
+      }
+
+      /* Style the main content */
+      .container {
+        text-align: center;
+        padding: 30px;
+        margin: 10px;
+      }
+
+      .container h1 {
+        font-size: 3rem;
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+      }
+
+      .container p {
+        font-size: 1.2rem;
+        margin: 10px 0;
+        line-height: 1.6;
+      }
+
+      .exercise-plans {
+        background-color: rgba(40, 40, 40, 0.85); /* Darker background for contrast */
+        padding: 40px;
+        margin: 10px;
+        border-radius: 15px;
+        opacity: 0;
+        animation: fadeIn 1.5s ease forwards;
+      }
+
+      .exercise-plans h2 {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+      }
+
+      .exercise-plans h3 {
+        font-size: 2rem;
+        margin-top: 20px;
+      }
+
+      .exercise-plans ul {
+        list-style-type: none;
+        text-align: left;
+        font-size: 1.2rem;
+        line-height: 1.8;
+        margin: 20px 0;
+      }
+
+      .exercise-plans ul li {
+        margin-bottom: 10px;
+        padding-left: 20px;
+        position: relative;
+      }
+
+      .exercise-plans ul li::before {
+        content: "✔";
+        color: #ffcc00; /* Gold checkmarks for consistency */
+        font-weight: bold;
+        position: absolute;
+        left: 0;
+      }
+
+      /* Footer */
+      footer {
+        text-align: center;
+        padding: 10px;
+        background-color: rgba(0, 0, 0, 0.7);
+        color: white;
+        position: static;
+        bottom: 0;
+        width: 100%;
+      }
+
+      /* Responsive design */
+      @media (max-width: 768px) {
+        .container h1 {
+          font-size: 2.5rem;
+        }
+
+        .container p {
+          font-size: 1rem;
+        }
+
+        .exercise-plans h2,
+        .exercise-plans h3 {
+          font-size: 2rem;
+        }
+
+        .exercise-plans ul {
+          font-size: 1rem;
+        }
+
+        nav ul li {
+          margin: 0 10px;
+        }
+
+        nav ul li a {
+          font-size: 16px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation Bar -->
+    <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="{{ url_for('bmi_calculator') }}">BMI Calculator</a></li>
+        <li><a href="{{ url_for('healthy_diets') }}">Healthy Diets</a></li>
+        <li><a href="{{ url_for('exercise_plans') }}">Exercise Plans</a></li>
+        <li><a href="{{ url_for('fit_yoga_hit_yoga') }}">Fit Yoga Hit Yoga</a></li>
+        <li><a href="{{ url_for('homepage') }}">Know More</a></li>
+      </ul>
+    </nav>    
+
+    <!-- Main Content -->
+    <div class="container fade-in">
+      <h1>Exercise Plans</h1>
+      <p>Find exercise plans that suit your fitness goals.</p>
+    </div>
+
+    <!-- Exercise Plans Section -->
+    <div class="exercise-plans fade-in">
+      <h2>Types of Exercise Plans</h2>
+
+      <h3>Beginner Plans</h3>
+      <ul>
+        <li>
+          <strong>30-Minute Walk:</strong> A simple daily walking routine to
+          boost cardiovascular health.
+        </li>
+        <li>
+          <strong>Bodyweight Exercises:</strong> Push-ups, squats, and lunges to
+          build strength.
+        </li>
+        <li>
+          <strong>Yoga Basics:</strong> Gentle yoga sessions to improve
+          flexibility and relaxation.
+        </li>
+        <li>
+          <strong>Stretching Routine:</strong> A series of stretches to enhance
+          flexibility and reduce soreness.
+        </li>
+        <li>
+          <strong>Dance Fitness:</strong> Fun dance routines to get moving while
+          enjoying music.
+        </li>
+      </ul>
+
+      <h3>Intermediate Plans</h3>
+      <ul>
+        <li>
+          <strong>HIIT Workouts:</strong> High-Intensity Interval Training for
+          efficient calorie burning.
+        </li>
+        <li>
+          <strong>Resistance Training:</strong> Weight lifting to build muscle
+          and strength.
+        </li>
+        <li>
+          <strong>Running Program:</strong> Gradually increasing running
+          distances to build endurance.
+        </li>
+        <li>
+          <strong>Circuit Training:</strong> Combining strength and cardio
+          exercises for a full-body workout.
+        </li>
+        <li>
+          <strong>Boxing Fitness:</strong> Kickboxing or shadowboxing sessions
+          for cardiovascular and muscular endurance.
+        </li>
+      </ul>
+
+      <h3>Advanced Plans</h3>
+      <ul>
+        <li>
+          <strong>CrossFit:</strong> A high-intensity fitness program combining
+          strength and conditioning.
+        </li>
+        <li>
+          <strong>Marathon Training:</strong> A structured plan for preparing
+          for long-distance running.
+        </li>
+        <li>
+          <strong>Powerlifting:</strong> Focused training to increase maximum
+          strength in three lifts.
+        </li>
+        <li>
+          <strong>Triathlon Training:</strong> Preparing for swimming, biking,
+          and running events.
+        </li>
+        <li>
+          <strong>Calisthenics:</strong> Advanced bodyweight exercises focusing
+          on strength, balance, and flexibility.
+        </li>
+      </ul>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      <p>&copy; 2024 Health and Nutrition App</p>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitness and Nutrition Platform</title>
+    <!-- <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"> -->
+    <!-- <link rel="stylesheet" href="/static/css/tailwind.css"> -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.3/font/bootstrap-icons.min.css">
+</head>
+<body>
+
+    <nav class="bg-white border-gray-200 dark:bg-gray-900">
+        <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+          <a href="/" class="flex items-center space-x-3 rtl:space-x-reverse">
+              <img src="/static/images/heart-pulse.svg" class="h-8 dark:text-white" alt="Platform Logo" />
+              <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Fitness And Nutrition</span>
+          </a>
+          <button data-collapse-toggle="navbar-default" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-default" aria-expanded="false">
+              <span class="sr-only">Open main menu</span>
+              <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+              </svg>
+          </button>
+          <div class="hidden w-full md:block md:w-auto" id="navbar-default">
+            <ul class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+              <li>
+                <a href="/" class="block py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500" aria-current="page">Home</a>
+              </li>
+              <li>
+                <a href="/bmi_calculator" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">BMI Calculator</a>
+              </li>
+              <li>
+                <a href="/healthy_diets" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Healthy Diets</a>
+              </li>
+              <li>
+                <a href="/exercise_plans" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Exercise Plans</a>
+              </li>
+              <li>
+                <a href="/fit_yoga_hit_yoga" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Fit Yoga Hit Yoga</a>
+              </li>
+              <li>
+                <a href="/homepage" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Know More</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>      
+
+
+    <section class="bg-gray-50 min-h-screen flex items-center justify-center">
+        <div class="bg-white shadow-xl rounded-3xl max-w-4xl w-full flex overflow-hidden">
+            
+            <!-- Lottie Animation on the Left -->
+            <div class="w-1/2 bg-gradient-to-tr bg-gray-100 p-8 flex items-center justify-center">
+                <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script> 
+                <dotlottie-player 
+                    src="https://lottie.host/75353aae-4d9b-41cc-b124-41aae9143a09/gXOqBNEUE5.json" 
+                    background="transparent" 
+                    speed="0.5" 
+                    class="max-w-xs h-auto" 
+                    loop 
+                    autoplay>
+                </dotlottie-player>
+            </div>
+    
+            <!-- Form on the Right -->
+            <div class="w-1/2 p-10">
+                <h2 class="text-3xl font-semibold text-gray-800 mb-6">Get Your Personalized Recommendations</h2>
+    
+                <form action="/predict" method="POST" class="space-y-5">
+                    <!-- Age Input -->
+                    <div>
+                        <label for="age" class="block text-sm font-semibold text-gray-700">Age</label>
+                        <input type="number" id="age" name="age" required class="mt-1 block w-full p-2 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                    </div>
+    
+                    <!-- Gender Input -->
+                    <div class="relative">
+                        <label for="gender" class="block text-sm font-semibold text-gray-700">Gender</label>
+                        <select id="gender" name="gender" required class="mt-1 block w-full p-2 pr-10 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500 appearance-none">
+                            <option value="0">Select</option>
+                            <option value="1">Male</option>
+                            <option value="2">Female</option>
+                        </select>
+                        <!-- Custom Arrow -->
+                        <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3">
+                            <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </div>
+                    </div>
+    
+                    <!-- Height Input -->
+                    <div>
+                        <label for="height" class="block text-sm font-semibold text-gray-700">Height (cm)</label>
+                        <input type="number" id="height" name="height" required class="mt-1 block w-full p-2 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                    </div>
+    
+                    <!-- Weight Input -->
+                    <div>
+                        <label for="weight" class="block text-sm font-semibold text-gray-700">Weight (kg)</label>
+                        <input type="number" id="weight" name="weight" required class="mt-1 block w-full p-2 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                    </div>
+    
+                    <!-- Meal Frequency Input -->
+                    <div class="relative">
+                        <label for="meal_frequency" class="block text-sm font-semibold text-gray-700">Daily Meal Frequency</label>
+                        <select id="meal_frequency" name="meal_frequency" required class="mt-1 block w-full p-2 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500 appearance-none">
+                            <option value="1">Select</option>
+                            <option value="2">2 meals</option>
+                            <option value="3">3 meals</option>
+                            <option value="4">4 meals</option>
+                        </select>
+                        <!-- Custom Arrow -->
+                        <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3">
+                            <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </div>
+                    </div>
+    
+                    <!-- Exercise Level Input -->
+                    <div class="relative">
+                        <label for="exercise_level" class="block text-sm font-semibold text-gray-700">Exercise Level</label>
+                        <select id="exercise_level" name="exercise_level" required class="mt-1 block w-full p-2 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500 appearance-none">
+                            <option value="0">None</option>
+                            <option value="1">Light</option>
+                            <option value="2">Moderate</option>
+                            <option value="3">Heavy</option>
+                            <option value="4">Very Heavy</option>
+                        </select>
+                        <!-- Custom Arrow -->
+                        <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3">
+                            <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </div>
+                    </div>
+    
+                    <!-- Submit Button -->
+                    <div class="mt-6">
+                        <button type="submit" class="w-full bg-blue-600 text-white py-3 px-4 rounded-lg shadow-lg font-semibold hover:bg-blue-700 transition duration-300">
+                            Get Recommendations
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700 py-6">
+        <div class="max-w-screen-xl mx-auto px-4 flex flex-col justify-center items-center">
+            <p class="text-gray-500 dark:text-gray-400 text-sm text-center">&copy; 2024 FitLife. All Rights Reserved.</p>
+        </div>
+    </footer>     
+    
+</body>
+</html>

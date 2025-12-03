@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fit Yoga Hit Yoga</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        color: #333;
+      }
+
+      nav {
+        background-color: #4caf50;
+        padding: 15px;
+        text-align: center;
+      }
+
+      nav ul {
+        list-style-type: none;
+      }
+
+      nav ul li {
+        display: inline;
+        margin: 0 15px;
+      }
+
+      nav ul li a {
+        color: white;
+        text-decoration: none;
+        font-size: 18px;
+      }
+
+      .container {
+        width: 80%;
+        margin: 20px auto;
+      }
+
+      h1 {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      .yoga-section {
+        display: flex;
+        background-color: #fff;
+        margin-bottom: 20px;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+
+      .yoga-description {
+        flex: 1;
+        padding-right: 20px;
+      }
+
+      .yoga-video {
+        flex: 1;
+      }
+
+      footer {
+        text-align: center;
+        padding: 10px;
+        background-color: #4caf50;
+        color: white;
+        position: static;
+        bottom: 0;
+        width: 100%;
+      }
+
+      .benefits {
+        margin-top: 10px;
+        padding-left: 20px;
+      }
+
+      .benefits li {
+        margin-bottom: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation Bar -->
+    <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="{{ url_for('bmi_calculator') }}">BMI Calculator</a></li>
+        <li><a href="{{ url_for('healthy_diets') }}">Healthy Diets</a></li>
+        <li><a href="{{ url_for('exercise_plans') }}">Exercise Plans</a></li>
+        <li><a href="{{ url_for('fit_yoga_hit_yoga') }}">Fit Yoga Hit Yoga</a></li>
+        <li><a href="{{ url_for('homepage') }}">Know More</a></li>
+      </ul>
+    </nav>   
+
+    <!-- Main Content -->
+    <div class="container">
+      <h1>Fit Yoga Hit Yoga</h1>
+
+      <!-- Standing Poses -->
+      <div class="yoga-section" id="standing-poses">
+        <div class="yoga-description">
+          <h2>Standing Poses</h2>
+          <p>
+            Standing poses build strength and stability, improving balance and
+            posture. They engage multiple muscle groups and enhance focus.
+          </p>
+          <p>
+            <strong>Examples:</strong> Tadasana (Mountain Pose), Virabhadrasana
+            (Warrior Pose), Trikonasana (Triangle Pose).
+          </p>
+          <ul class="benefits">
+            <li>Improves posture and balance</li>
+            <li>Strengthens legs and core</li>
+            <li>Increases focus and body awareness</li>
+            <li>Enhances flexibility in hips and spine</li>
+          </ul>
+        </div>
+        <div class="yoga-video">
+          <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/6YL6XE4UxiU?si=Dnbg6Sp0g_v5oTER"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </div>
+
+      <!-- Seated Poses -->
+      <div class="yoga-section" id="seated-poses">
+        <div class="yoga-description">
+          <h2>Seated Poses</h2>
+          <p>
+            Seated poses promote flexibility and relaxation, calming the mind
+            and reducing stress. They often serve as a preparation for
+            meditation.
+          </p>
+          <p>
+            <strong>Examples:</strong> Sukhasana (Easy Pose), Padmasana (Lotus
+            Pose), Paschimottanasana (Seated Forward Bend).
+          </p>
+          <ul class="benefits">
+            <li>Enhances flexibility in the spine and legs</li>
+            <li>Calms the nervous system</li>
+            <li>Promotes relaxation and stress relief</li>
+            <li>Supports meditation practices</li>
+          </ul>
+        </div>
+        <div class="yoga-video">
+          <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/HaKRt4ATKOE?si=-x1t_9SNPej663EZ"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </div>
+
+      <!-- Forward Bends -->
+      <div class="yoga-section" id="forward-bends">
+        <div class="yoga-description">
+          <h2>Forward Bends</h2>
+          <p>
+            Forward bends help stretch the back and hamstrings while promoting
+            relaxation and introspection. They can also reduce anxiety and
+            stress.
+          </p>
+          <p>
+            <strong>Examples:</strong> Uttanasana (Standing Forward Bend), Janu
+            Sirsasana (Head-to-Knee Pose), Balasana (Child's Pose).
+          </p>
+          <ul class="benefits">
+            <li>Stretches the spine and hamstrings</li>
+            <li>Calms the mind and relieves stress</li>
+            <li>Promotes introspection and relaxation</li>
+            <li>Improves digestion</li>
+          </ul>
+        </div>
+        <div class="yoga-video">
+          <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/2MJGg-dUKh0?si=RmqYQ7RADIlLeQNC"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </div>
+
+      <!-- Backbends -->
+      <div class="yoga-section" id="backbends">
+        <div class="yoga-description">
+          <h2>Backbends</h2>
+          <p>
+            Backbends open the chest and improve spinal flexibility. They
+            energize the body and can help counteract the effects of sitting.
+          </p>
+          <p>
+            <strong>Examples:</strong> Bhujangasana (Cobra Pose), Urdhva
+            Dhanurasana (Upward Bow Pose), Dhanurasana (Bow Pose).
+          </p>
+          <ul class="benefits">
+            <li>Increases spinal flexibility</li>
+            <li>Opens the chest and shoulders</li>
+            <li>Boosts energy and alleviates fatigue</li>
+            <li>Improves lung capacity</li>
+          </ul>
+        </div>
+        <div class="yoga-video">
+          <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/02c6EtA2eGc?si=Mk8krttwI7S58gfF"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </div>
+
+      <!-- Twists -->
+      <div class="yoga-section" id="twists">
+        <div class="yoga-description">
+          <h2>Twists</h2>
+          <p>
+            Twists promote spinal flexibility and aid in digestion. They help
+            detoxify the body and can alleviate back pain.
+          </p>
+          <p>
+            <strong>Examples:</strong> Ardha Matsyendrasana (Half Lord of the
+            Fishes Pose), Bharadvajasana (Bharadvaja's Twist), Marichyasana
+            (Marichi's Pose).
+          </p>
+          <ul class="benefits">
+            <li>Improves digestion and detoxification</li>
+            <li>Increases spinal mobility</li>
+            <li>Relieves tension in the back and shoulders</li>
+            <li>Reduces back pain</li>
+          </ul>
+        </div>
+        <div class="yoga-video">
+          <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/PuI0L5BF-V0?si=z34yRyEL66wOTfeu"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </div>
+
+      <!-- Balancing Poses -->
+      <div class="yoga-section" id="balancing-poses">
+        <div class="yoga-description">
+          <h2>Balancing Poses</h2>
+          <p>
+            Balancing poses challenge stability and focus, helping to improve
+            coordination and mental concentration.
+          </p>
+          <p>
+            <strong>Examples:</strong> Vrksasana (Tree Pose), Garudasana (Eagle
+            Pose), Natarajasana (Dancer's Pose).
+          </p>
+          <ul class="benefits">
+            <li>Enhances balance and coordination</li>
+            <li>Builds focus and concentration</li>
+            <li>Strengthens the core and legs</li>
+            <li>Improves mental clarity</li>
+          </ul>
+        </div>
+        <div class="yoga-video">
+          <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/qNSZxJpyhjM?si=T4K-ZMbeKynL7fNs"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </div>
+
+      <!-- Inversions -->
+      <div class="yoga-section" id="inversions">
+        <div class="yoga-description">
+          <h2>Inversions</h2>
+          <p>
+            Inversions reverse the flow of gravity, promoting circulation and
+            improving balance. They can also calm the mind and reduce stress.
+          </p>
+          <p>
+            <strong>Examples:</strong> Sirsasana (Headstand), Sarvangasana
+            (Shoulder Stand), Adho Mukha Vrksasana (Handstand).
+          </p>
+          <ul class="benefits">
+            <li>Improves circulation</li>
+            <li>Enhances balance and coordination</li>
+            <li>Calms the nervous system</li>
+            <li>Boosts mental clarity and focus</li>
+          </ul>
+        </div>
+        <div class="yoga-video">
+          <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/IBRfIDr4B8M?si=vwbu56wtEjy7Kdcl"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </div>
+
+      <!-- Relaxation Poses -->
+      <div class="yoga-section" id="relaxation-poses">
+        <div class="yoga-description">
+          <h2>Relaxation Poses</h2>
+          <p>
+            Relaxation poses allow the body and mind to fully rest and
+            rejuvenate, promoting deep relaxation and stress relief.
+          </p>
+          <p>
+            <strong>Examples:</strong> Savasana (Corpse Pose), Supta Baddha
+            Konasana (Reclined Bound Angle Pose).
+          </p>
+          <ul class="benefits">
+            <li>Promotes deep relaxation</li>
+            <li>Reduces stress and anxiety</li>
+            <li>Calms the nervous system</li>
+            <li>Restores energy levels</li>
+          </ul>
+        </div>
+        <div class="yoga-video">
+          <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/YtjKXDHd5hU?si=3lBji0lm5sv9M7T7"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      <p>© 2024 Fit Yoga Hit Yoga. All rights reserved.</p>
+    </footer>
+  </body>
+</html>

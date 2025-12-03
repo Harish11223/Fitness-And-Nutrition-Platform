@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Recommended Daily Diet</title>
+
+    <!-- Add some CSS for styling and animations -->
+    <style>
+      /* Reset default margins and paddings */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      /* Set background color */
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f2f2f2;
+        color: #333;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+
+      /* Navigation Bar */
+      nav {
+        background-color: #333;
+        padding: 15px;
+      }
+
+      nav ul {
+        display: flex;
+        justify-content: center;
+        list-style-type: none;
+      }
+
+      nav ul li {
+        margin: 0 20px;
+      }
+
+      nav ul li a {
+        color: white;
+        text-decoration: none;
+        font-size: 18px;
+      }
+
+      nav ul li a:hover {
+        color: #ffcc00;
+      }
+
+      /* Main Content */
+      .container {
+        text-align: center;
+        padding: 50px;
+      }
+
+      .container h1 {
+        font-size: 2.5rem;
+        color: #333;
+        margin-bottom: 20px;
+      }
+
+      .container p {
+        font-size: 1.2rem;
+        margin: 20px 0;
+        line-height: 1.6;
+        color: #666;
+      }
+
+      /* Age Groups Section */
+      .age-groups {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 20px;
+        padding: 50px;
+        max-width: 1200px;
+        margin: auto;
+      }
+
+      .age-group {
+        background-color: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+      }
+
+      .age-group:hover {
+        transform: scale(1.05);
+      }
+
+      .age-group h2 {
+        font-size: 1.8rem;
+        margin-bottom: 10px;
+        color: #ffcc00;
+      }
+
+      .age-group ul {
+        list-style-type: none;
+        padding-left: 0;
+        font-size: 1.1rem;
+        color: #555;
+      }
+
+      .age-group ul li {
+        margin-bottom: 10px;
+        padding-left: 20px;
+        position: relative;
+      }
+
+      .age-group ul li::before {
+        content: "✔";
+        color: #ffcc00;
+        font-weight: bold;
+        position: absolute;
+        left: 0;
+      }
+
+      /* Footer */
+      footer {
+        text-align: center;
+        padding: 10px;
+        background-color: #333;
+        color: white;
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        .container h1 {
+          font-size: 2rem;
+        }
+
+        .container p {
+          font-size: 1rem;
+        }
+
+        .age-group h2 {
+          font-size: 1.5rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation Bar -->
+    <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="{{ url_for('bmi_calculator') }}">BMI Calculator</a></li>
+        <li><a href="{{ url_for('healthy_diets') }}">Healthy Diets</a></li>
+        <li><a href="{{ url_for('exercise_plans') }}">Exercise Plans</a></li>
+        <li><a href="{{ url_for('fit_yoga_hit_yoga') }}">Fit Yoga Hit Yoga</a></li>
+        <li><a href="{{ url_for('homepage') }}">Homepage</a></li>
+      </ul>
+    </nav> 
+
+    <!-- Main Content -->
+    <div class="container">
+      <h1>Recommended Daily Diet by Age Group</h1>
+      <p>
+        Discover the recommended calorie intake and ideal food types for various
+        age groups to maintain a healthy lifestyle.
+      </p>
+    </div>
+
+    <!-- Age Groups Section -->
+    <div class="age-groups">
+      <!-- Age Group 1: 2-3 Years -->
+      <div class="age-group">
+        <h2>2-3 Years</h2>
+        <ul>
+          <li>Calories: 1,000–1,400 kcal/day</li>
+          <li>Foods: Fruits, whole grains, dairy, lean proteins</li>
+          <li>
+            Recommended: Milk, yogurt, soft fruits, small servings of lean meats
+          </li>
+        </ul>
+      </div>
+
+      <!-- Age Group 2: 4-8 Years -->
+      <div class="age-group">
+        <h2>4-8 Years</h2>
+        <ul>
+          <li>Calories: 1,200–1,800 kcal/day</li>
+          <li>Foods: Vegetables, fruits, dairy, protein</li>
+          <li>Recommended: Eggs, whole grains, leafy greens, fish</li>
+        </ul>
+      </div>
+
+      <!-- Age Group 3: 9-13 Years -->
+      <div class="age-group">
+        <h2>9-13 Years</h2>
+        <ul>
+          <li>Calories: 1,600–2,600 kcal/day</li>
+          <li>Foods: Protein, dairy, whole grains, fruits</li>
+          <li>Recommended: Chicken, legumes, low-fat cheese, nuts</li>
+        </ul>
+      </div>
+
+      <!-- Age Group 4: 14-18 Years -->
+      <div class="age-group">
+        <h2>14-18 Years</h2>
+        <ul>
+          <li>Calories: 1,800–3,200 kcal/day</li>
+          <li>Foods: Protein, vegetables, healthy fats, whole grains</li>
+          <li>Recommended: Fish, eggs, lean meats, nuts, seeds</li>
+        </ul>
+      </div>
+
+      <!-- Age Group 5: 19-30 Years -->
+      <div class="age-group">
+        <h2>19-30 Years</h2>
+        <ul>
+          <li>Calories: 2,000–3,000 kcal/day</li>
+          <li>Foods: Protein, vegetables, fruits, whole grains</li>
+          <li>
+            Recommended: Lean meats, vegetables, fruits, whole grains, dairy
+          </li>
+        </ul>
+      </div>
+
+      <!-- Age Group 6: 31-50 Years -->
+      <div class="age-group">
+        <h2>31-50 Years</h2>
+        <ul>
+          <li>Calories: 1,800–2,800 kcal/day</li>
+          <li>Foods: Vegetables, fruits, whole grains, lean proteins</li>
+          <li>Recommended: Low-fat dairy, poultry, fish, nuts</li>
+        </ul>
+      </div>
+
+      <!-- Age Group 7: 51+ Years -->
+      <div class="age-group">
+        <h2>51+ Years</h2>
+        <ul>
+          <li>Calories: 1,600–2,400 kcal/day</li>
+          <li>Foods: Fiber-rich foods, lean proteins, dairy</li>
+          <li>Recommended: Vegetables, whole grains, fish, low-fat dairy</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      <p>&copy; 2024 Health and Nutrition App</p>
+    </footer>
+  </body>
+</html>

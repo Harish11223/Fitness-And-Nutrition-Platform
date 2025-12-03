@@ -1,0 +1,317 @@
+<!-- nutrition/templates/nutrition/healthy_diets.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Healthy Diets</title>
+
+    <!-- Add some CSS to style the page with animations -->
+    <style>
+      /* Reset default margins and paddings */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      /* Set background image */
+      body {
+        font-family: Arial, sans-serif;
+        background-image: url("your-background-image.jpg"); /* Replace with your image */
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        color: white;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+
+      /* Smooth transitions */
+      a,
+      button {
+        transition: all 0.3s ease;
+      }
+
+      /* Add fade-in animation */
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* Apply animation delays for different sections */
+      .fade-in {
+        animation: fadeIn 1s ease-out;
+        opacity: 0; /* Ensure it's hidden initially */
+        animation-fill-mode: forwards; /* Stay visible after the animation */
+      }
+
+      .fade-in-delay-1 {
+        animation-delay: 0.5s;
+      }
+
+      .fade-in-delay-2 {
+        animation-delay: 1s;
+      }
+
+      .fade-in-delay-3 {
+        animation-delay: 1.5s;
+      }
+
+      .fade-in-delay-4 {
+        animation-delay: 2s;
+      }
+
+      /* Style the navigation bar */
+      nav {
+        background-color: rgba(0, 0, 0, 0.7);
+        padding: 15px;
+      }
+
+      nav ul {
+        display: flex;
+        justify-content: center;
+        list-style-type: none;
+      }
+
+      nav ul li {
+        margin: 0 20px;
+      }
+
+      nav ul li a {
+        color: white;
+        text-decoration: none;
+        font-size: 18px;
+      }
+
+      nav ul li a:hover {
+        color: #ffcc00;
+      }
+
+      /* Style the main content */
+      .container {
+        text-align: center;
+        padding: 30px;
+      }
+
+      .container h1 {
+        font-size: 3rem;
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+      }
+
+      .container p {
+        font-size: 1.2rem;
+        margin: 10px 0;
+        line-height: 1.6;
+      }
+
+      .container a {
+        background-color: #ffcc00;
+        color: black;
+        padding: 10px 20px;
+        text-decoration: none;
+        border-radius: 5px;
+        font-weight: bold;
+      }
+
+      .container a:hover {
+        background-color: #ffc107;
+        transform: scale(1.05);
+      }
+
+      /* Diets Section */
+      .diets {
+        background-color: rgba(0, 0, 0, 0.7);
+        padding: 40px;
+        margin: 30px;
+        border-radius: 15px;
+        opacity: 0;
+        animation: fadeIn 1.5s ease forwards;
+      }
+
+      .diets h2 {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+      }
+
+      .diets h3 {
+        font-size: 2rem;
+        margin-top: 20px;
+        color: #ffcc00;
+      }
+
+      .diets ul {
+        list-style-type: none;
+        text-align: left;
+        font-size: 1.2rem;
+        line-height: 1.8;
+        margin: 20px 0;
+      }
+
+      .diets ul li {
+        margin-bottom: 10px;
+        padding-left: 20px;
+        position: relative;
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 10px;
+        padding: 15px;
+        transition: background 0.3s;
+      }
+
+      .diets ul li:hover {
+        background-color: rgba(255, 255, 255, 0.2);
+      }
+
+      .diets ul li::before {
+        content: "✔";
+        color: #ffcc00;
+        font-weight: bold;
+        position: absolute;
+        left: 0;
+      }
+
+      /* Footer */
+      footer {
+        text-align: center;
+        padding: 10px;
+        background-color: rgba(0, 0, 0, 0.7);
+        color: white;
+        opacity: 0;
+        animation: fadeIn 3s ease forwards;
+      }
+
+      /* Responsive design */
+      @media (max-width: 768px) {
+        .container h1 {
+          font-size: 2.5rem;
+        }
+
+        .container p {
+          font-size: 1rem;
+        }
+
+        .diets h2,
+        .diets h3 {
+          font-size: 2rem;
+        }
+
+        .diets ul {
+          font-size: 1rem;
+        }
+
+        nav ul li {
+          margin: 0 10px;
+        }
+
+        nav ul li a {
+          font-size: 16px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation Bar -->
+    <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="{{ url_for('bmi_calculator') }}">BMI Calculator</a></li>
+        <li><a href="{{ url_for('healthy_diets') }}">Healthy Diets</a></li>
+        <li><a href="{{ url_for('exercise_plans') }}">Exercise Plans</a></li>
+        <li><a href="{{ url_for('fit_yoga_hit_yoga') }}">Fit Yoga Hit Yoga</a></li>
+        <li><a href="{{ url_for('homepage') }}">Know More</a></li>
+      </ul>
+    </nav>    
+
+    <!-- Main Content -->
+    <div class="container fade-in">
+      <h1>Healthy Diets</h1>
+      <p>
+        Explore different diets that can help you lead a healthier lifestyle.
+      </p>
+    </div>
+
+    <!-- Healthy Diets Section -->
+    <div class="diets fade-in-delay-1">
+      <h2>Types of Healthy Diets</h2>
+
+      <h3>Vegetarian Diets</h3>
+      <ul>
+        <li>
+          <strong>Mediterranean Diet:</strong> Emphasizes whole grains, fruits,
+          vegetables, and healthy fats. <br />
+          <em>Protein:</em> Approximately 15-20% of daily calories.
+          <em>Vitamins:</em> Rich in Vitamins A, C, E, and K from fruits and
+          vegetables.
+        </li>
+        <li>
+          <strong>Plant-Based Diet:</strong> Focuses on whole, unprocessed plant
+          foods. <br />
+          <em>Protein:</em> About 10-15% of daily calories, from legumes, nuts,
+          and seeds. <em>Vitamins:</em> High in B vitamins, especially B6 and
+          folate.
+        </li>
+        <li>
+          <strong>Flexitarian Diet:</strong> Primarily vegetarian but allows
+          occasional meat and fish. <br />
+          <em>Protein:</em> 15-25% of daily calories, depending on meat intake.
+          <em>Vitamins:</em> Balanced intake of various vitamins, especially B12
+          from occasional meat.
+        </li>
+        <li>
+          <strong>Raw Vegan Diet:</strong> Consists of unprocessed plant foods
+          that are raw and organic. <br />
+          <em>Protein:</em> Approximately 10-15% of daily calories from nuts and
+          seeds. <em>Vitamins:</em> High in Vitamin C and antioxidants from
+          fruits and vegetables.
+        </li>
+      </ul>
+
+      <h3>Non-Vegetarian Diets</h3>
+      <ul>
+        <li>
+          <strong>Keto Diet:</strong> A low-carb, high-fat diet that promotes
+          weight loss. <br />
+          <em>Protein:</em> About 20-25% of daily calories, primarily from meat
+          and fish. <em>Vitamins:</em> May require supplements for Vitamins A,
+          D, E, and K.
+        </li>
+        <li>
+          <strong>Paleo Diet:</strong> Focuses on foods that were available to
+          our prehistoric ancestors. <br />
+          <em>Protein:</em> Approximately 30-35% of daily calories, high in lean
+          meats. <em>Vitamins:</em> Rich in Vitamins B and C from fruits and
+          vegetables.
+        </li>
+        <li>
+          <strong>Atkins Diet:</strong> A low-carb diet that emphasizes protein
+          and healthy fats. <br />
+          <em>Protein:</em> 25-30% of daily calories, mainly from animal
+          sources. <em>Vitamins:</em> Focus on a variety of foods to ensure a
+          balance of vitamins, including B vitamins.
+        </li>
+        <li>
+          <strong>Whole30 Diet:</strong> A 30-day program that focuses on whole
+          foods and eliminates sugar, alcohol, grains, and legumes. <br />
+          <em>Protein:</em> Varies based on food choices.
+          <em>Vitamins:</em> Aims for a balanced intake of vitamins through
+          diverse whole foods.
+        </li>
+      </ul>
+    </div>
+
+    <!-- Footer -->
+    <footer class="fade-in-delay-4">
+      <p>&copy; 2024 Health and Nutrition App</p>
+    </footer>
+  </body>
+</html>
